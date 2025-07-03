@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StellarSite | Creative Web Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0f2027;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 32, 39, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    header h1 {
+      color: #00f9ff;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 25px;
+      font-weight: 600;
+      color: #eee;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00f9ff;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to top right, rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, #00f9ff, #8f94fb);
+      color: #0f2027;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00f9ff;
+    }
+
+    /* Sections */
+    .section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00f9ff;
+    }
+
+    .about p {
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    /* Services */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 30px;
+      width: 300px;
+      backdrop-filter: blur(15px);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h4 {
+      margin-bottom: 15px;
+      color: #00f9ff;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #ddd;
+    }
+
+    /* Footer */
+    footer {
+      background: #081c24;
+      padding: 50px 20px;
+      text-align: center;
+      color: #aaa;
+      margin-top: 80px;
+    }
+
+    footer a {
+      color: #00f9ff;
+      font-weight: 600;
+    }
+
+    footer p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>StellarSite</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Next-Level Web Experiences</h2>
+    <p>Design meets technology. We build stunning, modern, high-performance websites for startups and brands.</p>
+    <a href="#services" class="btn">View Services</a>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <h3 class="section-title">About Us</h3>
+    <p>At StellarSite, we specialize in creative web design with a futuristic touch. We believe in websites that don’t just look good — they feel amazing to use.</p>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <h3 class="section-title">Our Services</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>UI/UX Design</h4>
+        <p>Beautiful, user-first interfaces that drive engagement and conversion.</p>
+      </div>
+      <div class="card">
+        <h4>Web Development</h4>
+        <p>Responsive, fast, and accessible HTML/CSS websites — coded clean from scratch.</p>
+      </div>
+      <div class="card">
+        <h4>Brand Identity</h4>
+        <p>Crafting memorable brand systems with color, typography, and voice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>Let’s build something amazing. Contact us at <a href="mailto:team@stellarsite.com">team@stellarsite.com</a></p>
+    <p>&copy; 2025 StellarSite Creative Studio</p>
+  </footer>
+
+</body>
+</html>
